@@ -103,7 +103,6 @@ public:
 >- ✅ Демонстрацию ошибки при открытии несуществующей папки
 
 ```cpp
-// demo/main.cpp
 #include "FileRAII.hpp"
 #include <iostream>
 #include <filesystem>
@@ -111,46 +110,58 @@ public:
 int main() {
     using fsutil::FileRAII;
     using fsutil::FileError;
+
     const std::string path = "test.txt";
 
     try {
-        // — Write
+        // ---------- 1) Write and close immediately ----------
         {
-            FileRAII w(path, FileRAII::Mode::Write);
-            w.writeLine("Pervaya stroka");
-            w.writeLine("Vtoraya stroka");
-            std::cout << "Zapis uspeshna\n";
-        }
+            FileRAII writer(path, FileRAII::Mode::Write);
+            writer.writeLine("Pervaya stroka");
+            writer.writeLine("Vtoraya stroka");
+            std::cout << "Recording is successful\n";
+        }   
 
-        // — Read
+        
+        std::cout << "Current working directory: "
+            << std::filesystem::current_path() << "\n\n";
+
+        // ---------- 2) Read content ----------
         {
-            FileRAII r(path, FileRAII::Mode::Read);
-            std::cout << "Soderjimoe faila:\n";
+            FileRAII reader(path, FileRAII::Mode::Read);
+            std::cout << "File content:\n";
             while (true) {
-                auto l = r.readLine();
-                if (l.empty()) break;  // EOF
-                std::cout << l << "\n";
+                auto line = reader.readLine();
+                if (line.empty()) break;   // EOF
+                std::cout << line << "\n";
             }
         }
 
-        // — Append
+        // ---------- 3) Append ----------
         {
-            FileRAII a(path, FileRAII::Mode::Append);
-            a.writeLine("Appended line.");
-            std::cout << "Append uspeshny\n";
+            FileRAII appender(path, FileRAII::Mode::Append);
+            appender.writeLine("Appended line.");
+            std::cout << "\nAppend successful\n";
         }
 
-        // — Error demo
+        // ---------- 4) ERROR----------
         try {
-            FileRAII bad("nonexistent_dir/x.txt", FileRAII::Mode::Write);
-        } catch (const FileError& ex) {
-            std::cerr << "Oshibka: " << ex.what() << "\n";
+            FileRAII bad("nonexistent_dir/file.txt", FileRAII::Mode::Write);
         }
+        catch (const FileError& ex) {
+            std::cerr << "\nFile operation error: " << ex.what() << "\n";
+        }
+
     }
     catch (const FileError& ex) {
         std::cerr << "Fatal FileError: " << ex.what() << "\n";
         return 1;
     }
+    catch (const std::exception& ex) {
+        std::cerr << "General error: " << ex.what() << "\n";
+        return 2;
+    }
+
     return 0;
 }
 
