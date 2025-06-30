@@ -1,0 +1,3 @@
+Pervaya stroka
+Vtoraya stroka
+Appended line.

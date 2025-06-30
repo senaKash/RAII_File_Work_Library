@@ -1,0 +1,2 @@
+#pragma code_page(65001)
+1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "C:/Users/Sena/Desktop/random_scripts/DZ_2_Protei/out/build/x64-Debug/CMakeFiles/demo_app.dir/embed.manifest"

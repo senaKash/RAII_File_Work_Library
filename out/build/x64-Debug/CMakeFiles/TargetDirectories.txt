@@ -1,0 +1,4 @@
+C:/Users/Sena/Desktop/random_scripts/DZ_2_Protei/out/build/x64-Debug/CMakeFiles/FileRAII.dir
+C:/Users/Sena/Desktop/random_scripts/DZ_2_Protei/out/build/x64-Debug/CMakeFiles/demo_app.dir
+C:/Users/Sena/Desktop/random_scripts/DZ_2_Protei/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/Sena/Desktop/random_scripts/DZ_2_Protei/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir

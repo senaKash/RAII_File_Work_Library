@@ -1,0 +1,11 @@
+# ninja log v6
+3	291	7729711842927110	CMakeFiles/demo_app.dir/demo/main.cpp.obj	64016ae2db70cd4f
+2	295	7729709479108619	CMakeFiles/FileRAII.dir/src/FileRAII.cpp.obj	12a7380da5f4b94d
+295	359	7729709482100178	FileRAII.lib	98a60fcb8eeacfba
+292	1323	7729711845752311	demo_app.exe	72e6933303b57cce
+8	283	7729715738811169	CMakeFiles/demo_app.dir/demo/main.cpp.obj	64016ae2db70cd4f
+2	291	7729715738811169	CMakeFiles/FileRAII.dir/src/FileRAII.cpp.obj	12a7380da5f4b94d
+291	353	7729715741665630	FileRAII.lib	98a60fcb8eeacfba
+353	1431	7729715742358505	demo_app.exe	72e6933303b57cce
+3	470	7729716344060740	CMakeFiles/demo_app.dir/demo/main.cpp.obj	64016ae2db70cd4f
+471	1538	7729716348730398	demo_app.exe	72e6933303b57cce
