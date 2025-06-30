@@ -1,79 +1,58 @@
-# Build directories
-/build/
-/out/
-/CMakeFiles/
-/CMakeCache.txt
-/*.cmake
-/*.dir/
-
-# Visual Studio files
+# Visual Studio
 .vs/
-/*.sln
-/*.vcxproj*
-/*.vcxproj.filters
-/*.vcxproj.user
-/*.vcxproj.user.*
-/*.vcxproj.props
-/*.vcxproj.*.user
+*.sln
+*.vcxproj*
+*.vcxproj.filters
+*.vcxproj.user
+*.vcxproj.user.*
+*.vcxproj.props
+
+# CMake-generated
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Build output folders
+out/
+build/
+*/build/
+*/out/
+
+# Debug/Release (для VS и любых сборок)
 Debug/
-/Release/
-/ipch/
-/*.opensdf
-/*.sdf
-/*.cachefile
+Release/
+x64-Debug/
+x64-Release/
 
-# OS-specific
-# Windows thumbnail cache files
-Thumbs.db
-ehthumbs.db
+# Intermediate object files and libs
+*.obj
+*.o
+*.lib
+*.a
 
-# Folder config file
-Desktop.ini
-
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Other editors
-*~
-*.swp
-*.swo
-.idea/
-*.code-workspace
-
-# Logs and temporary files
-*.log
-*.tmp
-*.temp
-
-# Generated documentation
-/docs/html/
-/docs/xml/
-
-# Test artifacts
-/Testing/
-
-# Dependency directories (if any)
-/vendor/
-/third_party/
-
-# Ignore compiled binaries
+# Executables and DLLs
 *.exe
 *.dll
 *.so
 *.dylib
-*.lib
-*.obj
-*.o
-*.a
-*.lo
 
-# Ignore coverage reports
-coverage/
-*.gcno
-*.gcda
-
-# Ignore IntelliSense databases
+# IDE & Editor
+*.user
+*.suo
+*.sdf
+*.cache
+*.db
+*.opendb
 *.VC.db
 *.VC.opendb
+.idea/
+*.code-workspace
+
+# System
+.DS_Store
+Thumbs.db
+
+# Logs/Temp
+*.log
+*.tmp
