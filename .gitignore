@@ -1,41 +1,79 @@
-# Prerequisites
-*.d
+# Build directories
+/build/
+/out/
+/CMakeFiles/
+/CMakeCache.txt
+/*.cmake
+/*.dir/
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# Visual Studio files
+.vs/
+/*.sln
+/*.vcxproj*
+/*.vcxproj.filters
+/*.vcxproj.user
+/*.vcxproj.user.*
+/*.vcxproj.props
+/*.vcxproj.*.user
+Debug/
+/Release/
+/ipch/
+/*.opensdf
+/*.sdf
+/*.cachefile
 
-# Precompiled Headers
-*.gch
-*.pch
+# OS-specific
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
 
-# Linker files
-*.ilk
+# Folder config file
+Desktop.ini
 
-# Debugger Files
-*.pdb
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
 
-# Compiled Dynamic libraries
+# Other editors
+*~
+*.swp
+*.swo
+.idea/
+*.code-workspace
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Generated documentation
+/docs/html/
+/docs/xml/
+
+# Test artifacts
+/Testing/
+
+# Dependency directories (if any)
+/vendor/
+/third_party/
+
+# Ignore compiled binaries
+*.exe
+*.dll
 *.so
 *.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
 *.lib
+*.obj
+*.o
+*.a
+*.lo
 
-# Executables
-*.exe
-*.out
-*.app
+# Ignore coverage reports
+coverage/
+*.gcno
+*.gcda
 
-# debug information files
-*.dwo
+# Ignore IntelliSense databases
+*.VC.db
+*.VC.opendb
