@@ -43,10 +43,11 @@ FileRAII::~FileRAII() {
 ```
 ```cpp
 {
-    FileRAII w("a.txt", FileRAII::Mode::Write);
-    w.writeLine("Hello");
-} // здесь w.~FileRAII() закрывает поток автоматически
-
+    // Запись в test.txt и автоматическое закрытие по выходу из блока
+    FileRAII writer("test.txt", FileRAII::Mode::Write);
+    writer.writeLine("Pervaya stroka");
+    writer.writeLine("Vtoraya stroka");
+} // <-- здесь срабатывает деструктор FileRAII и файл закрывается
 ```
 
 **3)Методы *readLine* и *writeLine***
