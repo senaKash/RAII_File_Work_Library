@@ -9,22 +9,22 @@ int main() {
     const std::string path = "test.txt";
 
     try {
-        // ---------- 1) Write (create or truncate) and close immediately ----------
+        // ---------- 1) Write and close immediately ----------
         {
             FileRAII writer(path, FileRAII::Mode::Write);
             writer.writeLine("Pervaya stroka");
             writer.writeLine("Vtoraya stroka");
-            std::cout << "Zapis uspeshna\n";
-        }   // <-- здесь writer.~FileRAII() закрывает файл
+            std::cout << "Recording is successful\n";
+        }   
 
-        // Покажем, откуда запускаем, чтобы убедиться в правильном пути
+        
         std::cout << "Current working directory: "
             << std::filesystem::current_path() << "\n\n";
 
         // ---------- 2) Read content ----------
         {
             FileRAII reader(path, FileRAII::Mode::Read);
-            std::cout << "Soderjimoe faila:\n";
+            std::cout << "File content:\n";
             while (true) {
                 auto line = reader.readLine();
                 if (line.empty()) break;   // EOF
@@ -36,7 +36,7 @@ int main() {
         {
             FileRAII appender(path, FileRAII::Mode::Append);
             appender.writeLine("Appended line.");
-            std::cout << "\nAppend uspeshny\n";
+            std::cout << "\nAppend successful\n";
         }
 
         // ---------- 4) Демонстрация обработки ошибки ----------
@@ -44,7 +44,7 @@ int main() {
             FileRAII bad("nonexistent_dir/file.txt", FileRAII::Mode::Write);
         }
         catch (const FileError& ex) {
-            std::cerr << "\nOshibka failovoi operatsii: " << ex.what() << "\n";
+            std::cerr << "\nFile operation error: " << ex.what() << "\n";
         }
 
     }
@@ -53,7 +53,7 @@ int main() {
         return 1;
     }
     catch (const std::exception& ex) {
-        std::cerr << "Obshchaya oshibka: " << ex.what() << "\n";
+        std::cerr << "General error: " << ex.what() << "\n";
         return 2;
     }
 
